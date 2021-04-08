@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.caja{
+  text-align: left;
+  height: 200px;
+}
+.text{
+  text-align: right;
+}
+.ancho{
+  height: 6px;
+}

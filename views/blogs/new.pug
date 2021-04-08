@@ -1,0 +1,39 @@
+extends ../layout.pug
+
+block content
+    h2 Crear un nuevo Post
+    form(action="/blogs/create", method="POST", novalidate)
+        .form-group.mb-4 
+            label.form-label Nombre
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el nombre",
+                name="nombre")
+        .form-group.mb-4
+            label.form-label Fecha
+            input.form-control(
+                type="text",
+                readonly="readonly", 
+                value= fecha ,
+                name="fecha")
+        .form-group.mb-4
+            label.form-label Titulo
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el titulo",
+                name="titulo")
+        .form-group.mb-4
+            label.form-label Categoria
+            input.form-control(
+                type="text", 
+                placeholder="Introduce la categoria",
+                name="categoria")
+        .form-group.mb-4
+            label.form-label Texto
+            textarea.form-control(
+                cols="30",
+                rows="10",
+                type="text", 
+                placeholder="Introduce el texto",
+                name="texto")        
+        input.btn.btn-block.btn-info(type="submit", value="Crear post")

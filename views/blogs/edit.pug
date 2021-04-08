@@ -1,0 +1,57 @@
+extends ../layout.pug
+
+block content 
+
+    h2 Editar un Post
+    form(action="/blogs/update", method="POST", novalidate)
+        .form-group.mb-4 
+            label.form-label Nombre
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el nombre",
+                name="nombre",
+                value=blog.nombre)
+        .form-group.mb-4
+            label.form-label Fecha
+            input.form-control(
+                type="text",
+                readonly="readonly", 
+                value= fecha,
+                name="fecha")
+        .form-group.mb-4
+            label.form-label Titulo
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el titulo",
+                name="titulo",
+                value=blog.titulo)
+        .form-group.mb-4
+            label.form-label Categoria
+            input.form-control(
+                type="text", 
+                placeholder="Introduce la categoria",
+                name="categoria",
+                value=blog.categoria)
+        .form-group.mb-4
+            label.form-label Texto
+            textarea#caja.form-control.caja(
+                type="text", 
+                placeholder="Introduce el texto",
+                name="texto",
+                value=blog.texto)   
+        input(type="hidden", name="id", value=blog._id)     
+        input.btn.btn-block.btn-info(type="submit", value="Modificar post")
+    script.
+        const blog = "#{blog.texto}";
+        const caja = document.querySelector('#caja');
+        function texto(){
+            if(blog.length > 0){
+                caja.value = blog;
+            }else{
+                caja.value="Escriba aqui su post";
+            }
+        }
+        texto();
+
+
+        
