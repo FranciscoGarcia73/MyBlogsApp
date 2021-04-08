@@ -1,0 +1,38 @@
+GET http://localhost:3000/api/blogs
+
+###
+
+
+
+
+
+
+
+POST http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+
+{
+    "username": "Fran",
+    "email": "francisco@gmail.com",
+    "password": "holaMundo4321"
+}
+
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "francisco@gmail.com",
+    "password": "holaMundo4321"
+}
+
+###
+PUT http://localhost:3000/api/blogs/606eb105b9f54c42843f5b31
+Content-Type: application/json
+
+{
+    "nombre": "Francisco",
+    "titulo": "Bases de datos",
+    "categoria": "Programacion",
+    "texto": "Esto es una quinta prueba del blog"
+}
