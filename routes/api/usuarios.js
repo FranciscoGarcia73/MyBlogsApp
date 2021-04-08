@@ -39,8 +39,6 @@ router.post('/registro', [
 
 
 
-
-
 router.post('/login', async (req, res) => {
     // 1 - Comprobar el usuario a partir de su email
     const usuario = await Usuario.findOne({
@@ -66,7 +64,7 @@ router.post('/login', async (req, res) => {
 
 function createToken(usuario) {
     const data = {
-        usuarioId: usuario._id,
+        usuarioId: usuario.username,
         caduca: dayjs().add(10, 'days').unix()
     }
 

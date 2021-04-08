@@ -1,13 +1,20 @@
 GET http://localhost:3000/api/blogs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiI2MDZlYmIzMGY3YzJjMzBhYzgxMDE1OTYiLCJjYWR1Y2EiOjE2MTg3NjM0NzksImlhdCI6MTYxNzg5OTQ3OX0.felyhEe8jrteWKgreV6E34jf_WgGmTo2vr2PUaVK-Sk
+
 
 ###
+POST http://localhost:3000/api/blogs
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiJGcmFuIiwiY2FkdWNhIjoxNjE4NzY0ODAyLCJpYXQiOjE2MTc5MDA4MDJ9.IbOxQKw6hjML81QApBm_y7MK8_D-OfJD5e_ZWYz7wZg
+
+{
+    "titulo": "Busco nevera",
+    "categoria": "Electrodomesticos",
+    "texto": "Busco nevera de segunda mano"
+}
 
 
-
-
-
-
-
+###
 POST http://localhost:3000/api/usuarios/registro
 Content-Type: application/json
 
@@ -16,6 +23,7 @@ Content-Type: application/json
     "email": "francisco@gmail.com",
     "password": "holaMundo4321"
 }
+
 
 ###
 POST http://localhost:3000/api/usuarios/login
@@ -26,13 +34,19 @@ Content-Type: application/json
     "password": "holaMundo4321"
 }
 
+
 ###
 PUT http://localhost:3000/api/blogs/606eb105b9f54c42843f5b31
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiJGcmFuIiwiY2FkdWNhIjoxNjE4NzY0ODAyLCJpYXQiOjE2MTc5MDA4MDJ9.IbOxQKw6hjML81QApBm_y7MK8_D-OfJD5e_ZWYz7wZg
 
 {
     "nombre": "Francisco",
     "titulo": "Bases de datos",
     "categoria": "Programacion",
-    "texto": "Esto es una quinta prueba del blog"
+    "texto": "Esto es una octava prueba del blog"
 }
+
+
+###
+DELETE http://localhost:3000/api/blogs/606f2726a7e8cc4440dbe6c0
