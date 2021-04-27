@@ -19,7 +19,7 @@ router.get('/new', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-    Blog.create(req.body)
+    Blog.create(req.body,{fecha: dayjs().format('DD-MM-YYYY HH:mm:ss')})
         .then(nuevoBlog => {
             res.redirect('/blogs');
         })

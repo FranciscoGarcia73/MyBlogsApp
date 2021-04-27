@@ -5,7 +5,7 @@ const blogsApiRouter = require('./api/blogs');
 const usuariosApiRouter = require('./api/usuarios');
 
 
-router.use('/blogs', checkToken, blogsApiRouter);
+router.use('/blogs', blogsApiRouter);
 router.use('/usuarios', usuariosApiRouter);
 
 

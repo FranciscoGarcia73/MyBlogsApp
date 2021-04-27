@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/',[
+router.post('/', [
+    // Validaciones con express-validator
     check('categoria', 'El campo categoria es obligatorio').exists(),
     check('texto', 'El campo texto es obligatorio').exists()
 ], async (req, res) => {
-
     // Comprobamos los errores del BODY
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -27,8 +27,8 @@ router.post('/',[
     }
 
     try {
-        req.body.nombre = req.usuarioId;
         req.body.fecha = dayjs().format('DD-MM-YYYY HH:mm:ss');
+        console.log(req);
         const nuevoBlog = await Blog.create(req.body);
         res.json(nuevoBlog);
     } catch (error) {

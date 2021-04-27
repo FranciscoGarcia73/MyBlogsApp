@@ -8,7 +8,7 @@ a {
 }
 .caja{
   text-align: left;
-  height: 200px;
+  height: auto;
 }
 .text{
   text-align: right;
