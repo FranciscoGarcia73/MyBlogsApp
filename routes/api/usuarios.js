@@ -65,7 +65,7 @@ router.post('/login', async (req, res) => {
 function createToken(usuario) {
     const data = {
         usuarioId: usuario.username,
-        caduca: dayjs().add(10, 'days').unix()
+        caduca: dayjs().add(30, 'days').unix()
     }
 
     return jwt.sign(data, process.env.SECRET_KEY);
